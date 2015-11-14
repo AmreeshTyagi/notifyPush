@@ -48,8 +48,8 @@
          <script src="https://notificationserver-batman-1.c9users.io/socket.io/socket.io.js"></script>
 		 <script type="text/javascript">
   app.initialize();
-
-  document.addEventListener('deviceready', function() {
+  
+var onDeviceReady = function() {
   	  alert('devide ready..');
       var socket = io.connect('https://notificationserver-batman-1.c9users.io');
 	 
@@ -58,7 +58,11 @@
         alert(text);
        });
      });
-  });
+  };
+  
+  
+  document.addEventListener('deviceready', onDeviceReady(), true);
+  
 </script>
     </body>
 </html>
